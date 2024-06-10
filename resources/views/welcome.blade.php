@@ -49,7 +49,7 @@
     <!-- Mobile menu, show/hide based on menu state. -->
     <div class="sm:hidden" id="mobile-menu">
       <div class="px-2 pt-2 pb-3 space-y-1">
-        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+        <a href="" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
         <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
         <a href="/register" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Register</a>
         <a href="/login" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Login</a>
@@ -90,6 +90,17 @@
           <img src="../logo/hotel1.jpg" alt="Apartamenta attēls" class="mt-4">
           <a href="#" class="block text-blue-500 mt-2">Skatīt detaļas</a>
         </div>
+        <!-- Sample apartment item -->
+        <div class="border rounded-md p-4">
+  <h2 class="text-lg font-semibold">Luksusa pludmales villa</h2>
+  <p class="text-gray-600 mt-2">Apraksts: Izcila pludmales villa ar panorāmas skatu uz okeānu, privātu bezgalības baseinu un tiešu piekļuvi pludmalei.</p>
+  <p class="text-gray-600 mt-2">Cena: $500 par nakti</p>
+  <img src="../logo/hotel2.jpg" alt="Villas Attēls" class="mt-4">
+
+  <a href="#" class="block text-blue-500 mt-2">Skatīt Detaļas</a>
+</div>
+
+
         <!-- Repeat for each apartment item -->
         
       </div>
