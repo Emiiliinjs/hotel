@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hotel</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Custom styles can be added here */
+  </style>
 </head>
 <body>
   <!-- Navbar -->
@@ -30,14 +33,13 @@
         <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
           <div class="flex-shrink-0">
             <img class="h-8 w-auto" src="{{ asset('logo/logo.png') }}" width="100px">
-
           </div>
-          <div class="hidden sm:block sm:ml-6">
+          <div class="hidden sm:block sm:ml-6 flex-1">
             <div class="flex space-x-4">
               <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
               <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
-              <a href="/register" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Register</a>
-        <a href="/login" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Login</a>
+              <a href="/register" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Register</a>
+              <a href="/login" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Login</a>
             </div>
           </div>
         </div>
@@ -47,24 +49,69 @@
     <!-- Mobile menu, show/hide based on menu state. -->
     <div class="sm:hidden" id="mobile-menu">
       <div class="px-2 pt-2 pb-3 space-y-1">
-        <a href="" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
         <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
         <a href="/register" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Register</a>
         <a href="/login" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Login</a>
       </div>
     </div>
+
+    <!-- Header -->
+    <header class="bg-gray-800 text-white py-4">
+      <div class="container mx-auto">
+        <h1 class="text-3xl font-bold text-center">Pieejamie apartamenti</h1>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="container mx-auto py-8">
+      <!-- Search and sort options -->
+      <div class="flex justify-between mb-4">
+        <div>
+          <input type="text" placeholder="Meklēt pēc nosaukuma vai apraksta" class="px-4 py-2 border border-gray-300 rounded-md">
+          <button class="px-4 py-2 bg-blue-500 text-white rounded-md ml-2">Meklēt</button>
+        </div>
+        <div>
+          <label for="sort-select" class="mr-2">Kārtošana pēc:</label>
+          <select id="sort-select" class="px-4 py-2 border border-gray-300 rounded-md">
+            <option value="price">Cenas</option>
+            <option value="date">Datuma</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Apartment list -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Sample apartment item -->
+        <div class="border rounded-md p-4">
+          <h2 class="text-lg font-semibold">Apartamenta nosaukums</h2>
+          <p class="text-gray-600 mt-2">Apraksts: Īpašums ar skaistu skatu uz jūru un ērtu piekļuvi pludmalei.</p>
+          <p class="text-gray-600 mt-2">Cena: $100 par nakti</p>
+          <img src="../logo/hotel1.jpg" alt="Apartamenta attēls" class="mt-4">
+          <a href="#" class="block text-blue-500 mt-2">Skatīt detaļas</a>
+        </div>
+        <!-- Repeat for each apartment item -->
+        
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-4 mt-8">
+      <div class="container mx-auto text-center">
+        <p>&copy; 2024 Apartamentu īre. Visas tiesības aizsargātas.</p>
+      </div>
+    </footer>
+
+    <script>
+      const menuButton = document.querySelector('button[aria-controls="mobile-menu"]');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      menuButton.addEventListener('click', () => {
+        const isExpanded = menuButton.getAttribute('aria-expanded') === 'true' || false;
+        menuButton.setAttribute('aria-expanded', !isExpanded);
+        mobileMenu.classList.toggle('hidden');
+      });
+    </script>
   </nav>
-
-  <script>
-    const menuButton = document.querySelector('button[aria-controls="mobile-menu"]');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    menuButton.addEventListener('click', () => {
-      const isExpanded = menuButton.getAttribute('aria-expanded') === 'true' || false;
-      menuButton.setAttribute('aria-expanded', !isExpanded);
-      mobileMenu.classList.toggle('hidden');
-    });
-  </script>
 </body>
 </html>
-
