@@ -1,29 +1,29 @@
+<!-- resources/views/about.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hotel</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <style>
-    /* Custom styles can be added here */
-    html, body {
-      height: 100%; /* Ensure HTML and body take up full height of viewport */
-    }
-
-    body {
-      display: flex;
-      flex-direction: column;
-    }
-
-    main {
-      flex: 1; /* This will push footer to bottom when content is not enough */
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Ensure the footer is at the bottom */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        main {
+            flex: 1;
+        }
+    </style>
 </head>
-<body class="bg-gray-100">
-  <!-- Navbar -->
-  <nav class="bg-gray-800">
+<body>
+    <!-- Navbar -->
+    <nav class="bg-gray-800">
         <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div class="relative flex items-center justify-between h-16">
                 <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -76,71 +76,38 @@
         </div>
     </nav>
 
-  <!-- Header -->
-  <header class="bg-gray-800 text-white py-4">
-    <div class="container mx-auto">
-      <h1 class="text-3xl font-bold text-center">Pieejamie apartamenti</h1>
-    </div>
-  </header>
+    <!-- Header -->
+    <header class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto">
+            <h1 class="text-3xl font-bold text-center">About Us</h1>
+        </div>
+    </header>
 
-  <!-- Main content -->
-  <main class="container mx-auto py-8">
-    <!-- Search and sort options -->
-    <div class="flex justify-between mb-4">
-      <div>
-        <input type="text" placeholder="Meklēt pēc nosaukuma vai apraksta" class="px-4 py-2 border border-gray-300 rounded-md">
-        <button class="px-4 py-2 bg-blue-500 text-white rounded-md ml-2">Meklēt</button>
-      </div>
-      <div>
-        <label for="sort-select" class="mr-2">Kārtošana pēc:</label>
-        <select id="sort-select" class="px-4 py-2 border border-gray-300 rounded-md">
-          <option value="price">Cenas</option>
-          <option value="date">Datuma</option>
-        </select>
-      </div>
-    </div>
+    <!-- Main content -->
+    <main class="container mx-auto py-8">
+        <div class="text-center">
+            <h2 class="text-2xl font-semibold">Welcome to our about page</h2>
+            <p class="mt-4">Here you can learn more about us.</p>
+        </div>
+        <!-- Add more content about the organization here -->
+    </main>
 
-    <!-- Apartment list -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      <!-- Sample apartment item -->
-      <div class="border rounded-md p-4">
-        <h2 class="text-lg font-semibold">Apartamenta nosaukums</h2>
-        <p class="text-gray-600 mt-2">Apraksts: Īpašums ar skaistu skatu uz jūru un ērtu piekļuvi pludmalei.</p>
-        <p class="text-gray-600 mt-2">Cena: $100 par nakti</p>
-        <a href="/">
-          <img src="../logo/hotel1.jpg" alt="Apartamenta attēls" class="mt-4">
-        </a>
-        <a href="#" class="block text-blue-500 mt-2">Skatīt detaļas</a>
-      </div>
-      <!-- Sample apartment item -->
-      <div class="border rounded-md p-4">
-        <h2 class="text-lg font-semibold">Luksusa pludmales villa</h2>
-        <p class="text-gray-600 mt-2">Apraksts: Izcila pludmales villa ar panorāmas skatu uz okeānu, privātu bezgalības baseinu un tiešu piekļuvi pludmalei.</p>
-        <p class="text-gray-600 mt-2">Cena: $500 par nakti</p>
-        <a href="/">
-          <img src="../logo/hotel2.jpg" alt="Villas Attēls" class="mt-4">
-        </a>
-        <a href="#" class="block text-blue-500 mt-2">Skatīt Detaļas</a>
-      </div>
-      <!-- Repeat for each apartment item -->
-    </div>
-  </main>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-4 mt-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Apartamentu īre. Visas tiesības aizsargātas.</p>
+        </div>
+    </footer>
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-4 mt-8">
-    <div class="container mx-auto text-center">
-      <p>&copy; 2024 Apartamentu īre. Visas tiesības aizsargātas.</p>
-    </div>
-  </footer>
-  <script>
-    const menuButton = document.querySelector('button[aria-controls="mobile-menu"]');
-    const mobileMenu = document.getElementById('mobile-menu');
+    <script>
+        const menuButton = document.querySelector('button[aria-controls="mobile-menu"]');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-    menuButton.addEventListener('click', () => {
-      const isExpanded = menuButton.getAttribute('aria-expanded') === 'true' || false;
-      menuButton.setAttribute('aria-expanded', !isExpanded);
-      mobileMenu.classList.toggle('hidden');
-    });
-  </script>
+        menuButton.addEventListener('click', () => {
+            const isExpanded = menuButton.getAttribute('aria-expanded') === 'true' || false;
+            menuButton.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
